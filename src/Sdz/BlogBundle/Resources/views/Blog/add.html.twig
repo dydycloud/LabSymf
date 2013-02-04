@@ -1,0 +1,12 @@
+{# src/Sdz/BlogBundle/Resources/views/Blog/add.html.twig #}
+{% extends "SdzBlogBundle::layout.html.twig" %}
+
+{% block title %} {{ parent() }} - Add {% endblock %}
+
+{% block body %}
+	<h2>Ajouter une news</h2>
+
+	{% include "SdzBlogBundle:Blog:formulaire.html.twig" %}
+
+	<p>Page d'ajout d'article</p>
+{% endblock %}

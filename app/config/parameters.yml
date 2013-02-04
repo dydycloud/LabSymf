@@ -1,0 +1,15 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     localhost
+    database_port:     3306
+    database_name:     madlab
+    database_user:     root
+    database_password: epicure
+
+    mailer_transport:  gmail
+    mailer_host:       
+    mailer_user:       sandy.pierre97@gmail.com
+    mailer_password:   epicure971
+
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt

@@ -1,0 +1,25 @@
+sdz_home:
+    pattern:   /{page}
+    defaults:  { _controller: SdzBlogBundle:Blog:index, page: 1 }
+    requirements:
+        page: \d*
+
+sdz_show:
+    pattern:   /show/{id}
+    defaults:  { _controller: SdzBlogBundle:Blog:show }
+
+sdz_add:
+    pattern:   /add
+    defaults:  { _controller: SdzBlogBundle:Blog:add }
+
+sdz_edit:
+    pattern:   /edit/{id}
+    defaults:  { _controller: SdzBlogBundle:Blog:edit }
+    requirements:
+        id: \d+
+
+sdz_delete:
+    pattern:   /delete/{id}
+    defaults:  { _controller: SdzBlogBundle:Blog:delete }
+    requirements:
+        id: \d+
