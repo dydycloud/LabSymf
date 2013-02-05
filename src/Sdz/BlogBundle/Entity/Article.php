@@ -3,7 +3,7 @@
 namespace Sdz\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * Article
  *
@@ -78,11 +78,6 @@ class Article
     * @ORM\OneToMany(targetEntity="Sdz\BlogBundle\Entity\Commentaire", mappedBy="article")
     */
     private $commentaires; // Ici commentaires prend un "s", car un article a plusieurs commentaires !
-
-    /**
-    * @ORM\preUpdate
-    */
-    public function updateDate()
 
     /**
     * @Gedmo\Slug(fields={"titre"})
@@ -339,8 +334,11 @@ class Article
         return $this->dateEdition;
     }
 
-    /********************* CallBacks *****************/
-    public function updateDate()
+    /**
+    * @ORM\PrePersist()
+    * @ORM\PreUpdate()
+    */
+    public function preUpdate()
     {
         $this->setDateEdition(new \Datetime());
     }
